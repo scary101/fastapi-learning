@@ -4,7 +4,10 @@ from app.models.base import BaseModel
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.models.user_details import UserDetails
 from app.models.enums.role_enum import Role
-from app.models.entrepreneurs import Entrepreneurs
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from app.models.entrepreneurs import Entrepreneurs
 
 
 class Users(BaseModel):

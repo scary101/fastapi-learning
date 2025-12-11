@@ -3,13 +3,18 @@ from uuid import UUID
 from sqlalchemy import ForeignKey, String
 from app.models.base import BaseModel
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from typing import Optional, Text
-from app.models.wallets import Wallets
-from app.models.users import Users
+from typing import Optional, Text, TYPE_CHECKING
+
+
+if TYPE_CHECKING:
+    from app.models.users import Users
+    from app.models.wallets import Wallets
 
 
 
 class Entrepreneurs(BaseModel):
+    __tablename__ = "entrepreneurs"
+    
     user_id: Mapped[UUID] = mapped_column(
         ForeignKey("users.id"),
         unique=True

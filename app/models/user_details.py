@@ -1,9 +1,11 @@
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 import uuid
 from sqlalchemy import ForeignKey, String, Enum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.models.base import BaseModel
-from app.models.users import Users
+
+if TYPE_CHECKING:
+    from app.models.users import Users
 
 
 class UserDetails(BaseModel):

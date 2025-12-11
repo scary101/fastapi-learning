@@ -3,5 +3,5 @@ from enum import Enum
 
 class Role(Enum):
     ADMIN = "admin"
-    USER = 'user'
+    USER = "user"
     STORAGE_MANAGER = "storage_manager" 
