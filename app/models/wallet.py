@@ -7,11 +7,11 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from app.models.entrepreneurs import Entrepreneurs
+    from app.models.entrepreneur import Entrepreneur
 
 
 
-class Wallets(BaseModel):
+class Wallet(BaseModel):
     __tablename__ = "wallets"
     
     balance: Mapped[Decimal] = mapped_column(Numeric(10, 2), default=0, nullable=True)
@@ -19,7 +19,7 @@ class Wallets(BaseModel):
         ForeignKey("entrepreneurs.id"),
         unique=True
     )
-    entrepreneur: Mapped["Entrepreneurs"] = relationship(
+    entrepreneur: Mapped["Entrepreneur"] = relationship(
         back_populates="wallet",
         uselist=False
     )

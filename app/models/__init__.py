@@ -1,11 +1,19 @@
-from .users import Users
-from .user_details import UserDetails
-from .entrepreneurs import Entrepreneurs
-from .wallets import Wallets
+from .user import User
+from .user_detail import UserDetail
+from .entrepreneur import Entrepreneur
+from .wallet import Wallet
+from .category import Category
+from .characteristic import Characteristic
+from .category_characteristic import CategoryCharacteristic
+from .product import Product
 
 __all__ = [
-    "Users",
-    "UserDetails",
-    "Entrepreneurs",
-    "Wallets",
+    "User",
+    "UserDetail",
+    "Entrepreneur",
+    "Wallet",
+    "Category",
+    "Characteristic",
+    "CategoryCharacteristic",
+    "Product",
 ]
