@@ -7,6 +7,8 @@ from datetime import datetime, UTC
 
 class Base(DeclarativeBase):
     pass
+
+
 class BaseModel(Base):
     __abstract__ = True
     id: Mapped[UUID] = mapped_column(
